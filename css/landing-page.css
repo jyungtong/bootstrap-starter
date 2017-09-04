@@ -21,6 +21,7 @@ body, h1, h2, h3, h4, h5, h6 {
   color: #f8f8f8;
   background: url(../img/intro-bg.jpg) no-repeat center center;
   background-size: cover;
+  box-shadow: inset 0 0 0 1000px rgba(0,0,0,.2);
 }
 
 .intro-message {
@@ -98,7 +99,7 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 .banner {
-  padding: 100px 0;
+  padding: 10em 0;
   color: #f8f8f8;
   background: url(../img/banner-bg.jpg) no-repeat center center;
   background-size: cover;
