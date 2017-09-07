@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync').create();
 var pkg = require('./package.json');
+var sass = require('gulp-sass');
 
 // Copy vendor files from /node_modules into /vendor
 // NOTE: requires `npm install` before running!
@@ -30,8 +31,14 @@ gulp.task('copy', function() {
     .pipe(gulp.dest('vendor/font-awesome'))
 })
 
+gulp.task('styles', function() {
+  gulp.src('css/**/*.scss')
+    .pipe(sass().on('error', sass.logError))
+    .pipe(gulp.dest('./css'));
+})
+
 // Default task
-gulp.task('default', ['copy']);
+gulp.task('default', ['copy', 'styles']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function() {
